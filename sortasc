@@ -1,0 +1,34 @@
+package com.stackroute.basics;
+
+import java.util.Scanner;
+
+public class SortAscNumber {
+
+    public static void main(String[] args) {
+        new SortAscNumber().getNumbers();
+    }
+
+    //get the numbers from user through console
+    public void getNumbers() {
+       Scanner sc=new Scanner(System.in);
+       int a=sc.nextInt();
+       int b=sc.nextInt();
+       int c=sc.nextInt();
+       int d=sc.nextInt();
+       System.out.println(numberSorter(a,b,c,d));
+       sc.close();
+       
+    }
+
+    //logic to sort the numbers
+    public String numberSorter(int firstNumber, int secondNumber, int thirdNumber, int fourthNumber) {
+    	int t=0;
+        if(firstNumber>secondNumber) { t=firstNumber;firstNumber=secondNumber;secondNumber=t;}
+        if(thirdNumber>fourthNumber) { t=thirdNumber;thirdNumber=fourthNumber;fourthNumber=t; }
+        if(firstNumber>thirdNumber) { t=firstNumber;firstNumber=thirdNumber;thirdNumber=t; }
+        if(secondNumber>fourthNumber) { t=secondNumber;secondNumber=fourthNumber;fourthNumber=t; }
+        if(secondNumber>thirdNumber) { t=secondNumber;secondNumber=thirdNumber;thirdNumber=t; }
+        return "Sorted:{"+firstNumber+","+secondNumber+","+thirdNumber+","+fourthNumber+"}";
+    }
+   
+}
